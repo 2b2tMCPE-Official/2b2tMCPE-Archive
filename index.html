@@ -2,157 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2B2TMCPE Archive</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      min-height: 100vh;
-      min-width: 100vw;
-      overflow-x: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #ffffff;
-      background-color: #000010;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      transition: background-image 1s ease-in-out;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #000030;
-      padding: 15px 20px;
-      z-index: 2;
-    }
-
-    .menu-btn {
-      font-size: 26px;
-      cursor: pointer;
-    }
-
-    .title {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 260px;
-      height: 100%;
-      background-color: #000020;
-      padding-top: 70px;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 3;
-    }
-
-    .sidebar.active {
-      transform: translateX(0);
-    }
-
-    .sidebar a {
-      display: block;
-      padding: 15px 25px;
-      color: #ffffff;
-      text-decoration: none;
-      border-bottom: 1px solid #111;
-      font-weight: bold;
-    }
-
-    .sidebar a:hover {
-      background-color: #111133;
-    }
-
-    .main-content {
-      min-height: calc(100vh - 60px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .read-btn {
-      margin-top: 20px;
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: #001f4d;
-      color: white;
-      border: 2px solid #003366;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .read-btn:hover {
-      background-color: #002a66;
-    }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-      }
-      .main-content {
-        padding: 20px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2b2tmcpe Archive</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header>
-    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-    <div class="title">2B2TMCPE Archive</div>
-  </header>
-
-  <div class="sidebar" id="sidebar">
-    <a href="#">Timeline</a>
-    <a href="#">Events</a>
-    <a href="#">Groups</a>
-    <a href="#">Bases</a>
-    <a href="#">Players</a>
+  <div id="app">
+    <header>
+      <h1>2b2tmcpe Archive</h1>
+    </header>
+    <main>
+      <aside id="sidebar">
+        <nav id="chapters"></nav>
+      </aside>
+      <section id="content" class="reader"></section>
+    </main>
   </div>
-
-  <div class="main-content">
-    <h1>Welcome to the 2B2TMCPE Archive</h1>
-    <p>The most complete record of the Minecraft Pocket Edition anarchy server.</p>
-    <button class="read-btn" onclick="location.href='history.html'">Read 2B2TMCPE History</button>
-  </div>
-
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('active');
-    }
-
-    const images = [
-      'img/36.png',
-      'img/37.png',
-      'img/44.png',
-      'img/48.jpg',
-      'img/50.png',
-      'img/52.png'
-    ];
-
-    let index = 0;
-    function cycleBackground() {
-      document.body.style.backgroundImage = `url('${images[index]}')`;
-      index = (index + 1) % images.length;
-    }
-
-    cycleBackground(); // initial
-    setInterval(cycleBackground, 6000); // every 6 seconds
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
-    </html>
+      </html>
