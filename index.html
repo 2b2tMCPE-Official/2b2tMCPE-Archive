@@ -10,15 +10,19 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     html, body {
       height: 100%;
       min-height: 100vh;
+      min-width: 100vw;
+      overflow-x: hidden;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #ffffff;
       background-color: #000010;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
       transition: background-image 1s ease-in-out;
     }
 
@@ -44,13 +48,18 @@
     .sidebar {
       position: fixed;
       top: 0;
-      left: -260px;
+      left: 0;
       width: 260px;
       height: 100%;
       background-color: #000020;
       padding-top: 70px;
-      transition: left 0.3s;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
       z-index: 3;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
     }
 
     .sidebar a {
@@ -124,7 +133,7 @@
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
-      sidebar.style.left = sidebar.style.left === '0px' ? '-260px' : '0px';
+      sidebar.classList.toggle('active');
     }
 
     const images = [
@@ -146,4 +155,4 @@
     setInterval(cycleBackground, 6000); // every 6 seconds
   </script>
 </body>
-  </html>
+    </html>
