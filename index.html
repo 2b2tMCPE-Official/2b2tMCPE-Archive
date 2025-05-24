@@ -1,95 +1,144 @@
 <!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2B2TMCPE Archive</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Courier New', monospace;
-            background-color: #008080;
-            color: #ffffff;
-        }
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #000080;
-            color: white;
-            padding: 10px 20px;
-            border-bottom: 2px solid #ffffff;
-        }
-        .menu-btn {
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .title {
-            font-size: 24px;
-        }
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background-color: #000040;
-            color: white;
-            transition: left 0.3s;
-            padding-top: 60px;
-            border-right: 2px solid #ffffff;
-        }
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            border-bottom: 1px dotted #ffffff;
-        }
-        .sidebar a:hover {
-            background-color: #000080;
-        }
-        .main-content {
-            padding: 40px;
-            text-align: center;
-        }
-        .read-btn {
-            padding: 15px 25px;
-            font-size: 18px;
-            background-color: #C0C0C0;
-            color: black;
-            border: 2px outset #ffffff;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-        }
-        .read-btn:hover {
-            background-color: #A9A9A9;
-        }
-        h1, p {
-            font-family: 'Courier New', monospace;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2B2TMCPE Archive</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }html, body {
+  height: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  background-color: #000010;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+  animation: slideshow 30s infinite;
+}
+
+@keyframes slideshow {
+  0%   { background-image: url('img/36.png'); }
+  20%  { background-image: url('img/37.png'); }
+  40%  { background-image: url('img/44.png'); }
+  60%  { background-image: url('img/48.jpg'); }
+  80%  { background-image: url('img/50.png'); }
+  100% { background-image: url('img/52.png'); }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000030;
+  padding: 15px 20px;
+  z-index: 2;
+}
+
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background-color: #000020;
+  padding-top: 70px;
+  transition: left 0.3s;
+  z-index: 3;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 25px;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  background-color: #111133;
+}
+
+.main-content {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.read-btn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #001f4d;
+  color: white;
+  border: 2px solid #003366;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.read-btn:hover {
+  background-color: #002a66;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+  .main-content {
+    padding: 20px;
+  }
+}
+
+  </style>
 </head>
 <body>
-    <header>
-        <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-        <div class="title">2B2TMCPE Archive</div>
-    </header><div class="sidebar" id="sidebar">
-    <a href="#">Support</a>
-    <a href="#">Credits</a>
-</div>
-
-<div class="main-content">
+  <header>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+    <div class="title">2B2TMCPE Archive</div>
+  </header>  <div class="sidebar" id="sidebar">
+    <a href="#">Timeline</a>
+    <a href="#">Events</a>
+    <a href="#">Groups</a>
+    <a href="#">Bases</a>
+    <a href="#">Players</a>
+  </div>  <div class="main-content">
     <h1>Welcome to the 2B2TMCPE Archive</h1>
-    <p>This archive documents the history of 2BTMCPE.</p>
+    <p>The most complete record of the Minecraft Pocket Edition anarchy server.</p>
     <button class="read-btn" onclick="location.href='history.html'">Read 2B2TMCPE History</button>
-</div>
-
-<script>
+  </div>  <script>
     function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.style.left = sidebar.style.left === '0px' ? '-250px' : '0px';
+      const sidebar = document.getElementById('sidebar');
+      sidebar.style.left = sidebar.style.left === '0px' ? '-260px' : '0px';
     }
-</script>
-
-</body>
-  </html>
+  </script></body>
+        </html>
