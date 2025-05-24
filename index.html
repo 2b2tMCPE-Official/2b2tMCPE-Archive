@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2B2TMCPE Archive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            background-color: #008080;
+            color: #ffffff;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000080;
+            color: white;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ffffff;
+        }
+        .menu-btn {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .title {
+            font-size: 24px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #000040;
+            color: white;
+            transition: left 0.3s;
+            padding-top: 60px;
+            border-right: 2px solid #ffffff;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-bottom: 1px dotted #ffffff;
+        }
+        .sidebar a:hover {
+            background-color: #000080;
+        }
+        .main-content {
+            padding: 40px;
+            text-align: center;
+        }
+        .read-btn {
+            padding: 15px 25px;
+            font-size: 18px;
+            background-color: #C0C0C0;
+            color: black;
+            border: 2px outset #ffffff;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+        .read-btn:hover {
+            background-color: #A9A9A9;
+        }
+        h1, p {
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+        <div class="title">2B2TMCPE Archive</div>
+    </header><div class="sidebar" id="sidebar">
+    <a href="#">Support</a>
+    <a href="#">Credits</a>
+</div>
+
+<div class="main-content">
+    <h1>Welcome to the 2B2TMCPE Archive</h1>
+    <p>This archive documents the history of 2BTMCPE.</p>
+    <button class="read-btn" onclick="location.href='history.html'">Read 2B2TMCPE History</button>
+</div>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.style.left = sidebar.style.left === '0px' ? '-250px' : '0px';
+    }
+</script>
+
+</body>
+  </html>
