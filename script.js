@@ -1,7 +1,7 @@
 let currentPage = 1;
 let book = new URLSearchParams(window.location.search).get('book') || 'book1';
 
-document.getElementById('book-title').textContent = `📘 ${book.toUpperCase()}`;
+document.getElementById('book-title').textContent = `🤤 ${book.toUpperCase()}`;
 
 function loadPage(page) {
   const path = `books/${book}/${page}.md`;
